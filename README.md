@@ -33,7 +33,7 @@ All API keys in this release have been redacted (shown as `sk-REDACTED`). Set yo
 
 - Elmer QA generation: `elmer/scripts/kaywords_gen_V6.py`, `elmer/scripts/data_gen_from_keywords_v4-Deepseek.py`
 - Elmer IR → DPO pipeline: `elmer/IR_DPO_ELMER/`
-- Elmer QA test set: `elmer/QA_test/Elmer测试集.txt`
+- Elmer QA test set: `elmer/QA_test/Elmer_QA_testset.txt`
 - TCAD QA generation: `tcad/scripts/kaywords_gen_V6.py`, `tcad/scripts/data_gen_from_keywords_v4-Deepseek.py`, `tcad/scripts/data_gen_parallel_v6-general.py`
 - TCAD code examples: `tcad/code_test/`
-- TCAD QA test set: `tcad/QA_test/TCAD问题-完整试验.xlsx`
+- TCAD QA test set: `tcad/QA_test/TCAD_QA_testset.xlsx`
