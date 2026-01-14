@@ -1,0 +1,1 @@
+构建一个二维SDE场景，布尔模式为ABA，包含矩形区域Silicon(0,-0.5,0)到(1.9,0.5,0)、SiO2(0,-0.3,0)到(0.001,0.3,0)等，执行布尔切换、2D倒角和删除操作，设置窗口如BaseLine.Source从(0,-1,0)到(1,-0.3,0)，添加接触source@(0,-0.4,0)，掺杂包括BoronActiveConcentration 2.9e+16和PhosphorusActiveConcentration高斯分布，并放置区域PlaceCD.SiSub到R.Silicon。

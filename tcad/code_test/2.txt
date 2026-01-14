@@ -1,0 +1,1 @@
+在三维 SDE 场景中，使用 ABA 布尔模式，按 端点创建 Silicon 区域 sub3q、Insulator1 区域 dielc 和 Silicon 区域 sub1q，执行删除区域与布尔模式切换操作，构建网格后导出 BND/TDR 文件至 n@node@_bnd.tdr。

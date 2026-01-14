@@ -1,0 +1,7 @@
+(sde:set-process-up-direction "+z")
+(sdegeo:set-default-boolean "ABA")
+(sdegeo:create-cuboid (position -0.5 -0.5 0) (position 0.5 0.5 0.5) "Silicon" "substrate")
+(sdegeo:create-cuboid (position -0.5 -0.5 -0.5) (position 0.5 0.5 0) "Gas" "ambient")
+(sdegeo:set-default-boolean "BAB")
+(sde:build-mesh "n@node@")
+(sdeio:save-tdr-bnd "n@node@.tdr" "n@node@.bnd")

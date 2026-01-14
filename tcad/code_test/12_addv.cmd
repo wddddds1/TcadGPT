@@ -1,0 +1,6 @@
+(sde:set-process-up-direction "+z")
+(sdegeo:create-cuboid (position 0 0 0) (position 2 2 (- 2)) "Silicon" "sub")
+(sdegeo:create-cuboid (position 0 0 (- 2)) (position 2 2 2) "PolySilicon" "poly")
+(sdegeo:create-cuboid (position 0 (- 2) (- 2)) (position 2 2 2) "Gas" "rearReflector")
+(sde:build-mesh "n@node@")
+(sdeio:save-tdr-bnd "n@node@.tdr" "n@node@.bnd")

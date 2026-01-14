@@ -1,0 +1,299 @@
+在 ELMER 中，ElmerSolver 这一可执行程序的主要用途是什么？
+答案：用于求解由 Elmer 中物理模型构建的计算问题，并支持多物理场耦合求解。
+
+在 ELMER 中，单物理模型的最基本求解形式通常可归结为什么类型的方程？
+答案：形式为F(u)=0 的方程。
+
+在 ELMER 中，线性系统中的矩阵K 和向量b 分别代表什么？
+答案：K 是刚度矩阵，b 是线性系统的右端项向量。
+
+在 ELMER 中，处理多物理场耦合问题时通常采用哪一种非线性迭代方法？
+答案：非线性 Gauss–Seidel 迭代。
+
+在 ELMER 中，采用非线性 Gauss–Seidel 方法的主要优势是什么？
+答案：支持模块化软件设计，并允许复用单物理场求解器。
+
+在 ELMER 中，用于描述并驱动 ElmerSolver 求解 PDE 的输入文件简称是什么？
+答案： sif file（solver input file）
+
+在 ELMER 中，一个 section 结束的标记行是什么？
+答案： End
+
+在 ELMER 中，用于指定网格文件位置的 section 名称是什么？
+答案： Header
+
+在 ELMER 中，Header section 里用于指定网格数据库目录的指令（keyword）是什么？
+答案： Mesh DB
+
+在 ELMER 中，用于在输入文件开头检查未知关键字并输出警告的指令是什么？
+答案： Check Keywords "Warn"
+
+在 ELMER 中，用于指定重启所使用结果文件名的关键字是什么？
+答案： Restart File
+
+在 ELMER 中，用于将输出文件强制设为二进制格式的关键字是什么？
+答案： Binary Output
+
+在 ELMER 中，若不显式指定输出格式，结果文件默认采用哪种格式？
+答案： ASCII
+
+在 ELMER 中，用于指定只从重启文件中读取某些变量的关键字形式是什么？
+答案： Restart Variable i = String
+
+在 ELMER 中，Linear System Direct Method 的默认值是什么？
+答案： Banded
+
+在 ELMER 中，用于设置 GMRES 重启参数m 的关键字是什么？
+答案： Linear System GMRES Restart
+
+在 ELMER 中，Linear System GMRES Restart 的默认值是多少？
+答案： 10
+
+在 ELMER 中，用于设置 BiCGStab(ℓ) 多项式阶数ℓ 的关键字是什么？
+答案： BiCGstabl polynomial degree
+
+在 ELMER 中，用于控制线性迭代不收敛时是否中止运行的关键字是什么？
+答案： Linear System Abort Not Converged
+
+在 ELMER 中，ILUn 中的 n 支持哪些取值范围？
+答案： 0,1,...,9
+
+在 ELMER 中，用于控制残差输出频率的关键字是什么？
+答案： Linear System Residual Output
+
+在 ELMER 中，用于设置 multigrid 层数的关键字是什么？
+答案： MG Levels
+
+在 ELMER 中，与时间离散相关的关键字通常可以写在哪个 section 中？
+答案： Simulation section
+
+在 ELMER 中，Bossak Alpha 的默认值是多少？
+答案： -0.05
+
+在 ELMER 中，用于启用自适应时间步的关键字是什么？
+答案： Adaptive Timestepping
+
+在 ELMER 中，自适应时间步只在什么条件下可用？
+答案： 仅在“一阶 BDF scheme”情况下可用
+
+在 ELMER 中，Eigen System Select 的默认选项是什么？
+答案： Smallest Magnitude
+
+在 ELMER 中，Eigen System Max Iterations 的默认值是多少？
+答案： 300
+
+在 ELMER 中，用于在特征值分析中考虑预应力的关键字是什么？
+答案： Geometric Stiffness
+
+在 ELMER 中，用于指定 Dirichlet 条件作用边界集合的关键字是什么？
+答案： Target Boundaries
+
+在 ELMER 中，用于强制按 BC 编号顺序施加 Dirichlet 条件的关键字是什么？
+答案： Set Dirichlet BCs by BC Numbering
+
+在 ELMER 中，用于启用显式 periodic 条件类型的关键字是什么？
+答案： Periodic BC Explicit
+
+在 ELMER 中，将 periodic 处理改为 Lagrange multiplier 的关键字是什么？
+答案： Periodic BC Use Lagrange Coefficients
+
+在 ELMER 中，mortar 条件的积分点定位需要满足什么可定位性要求？
+答案： non-mortar 侧所有积分点必须能在 mortar 元素集合中找到
+
+在 ELMER 中，generic mortar integration 使用什么搜索结构？
+答案： oct-tree 搜索
+
+在 ELMER 中，哪个 keyword 会“引入 mortar BCs，从而产生 linear constraints”？
+答案： Apply Mortar BCs
+
+在 ELMER 中，哪个 keyword 控制是否把 Lagrange multipliers “保存为场（field）”？
+答案： Export Lagrange Multiplier
+
+在 ELMER 中，哪个 keyword 计算 constraint modes 之间的 fluxes？
+答案： Constraint Modes Fluxes
+
+在 ELMER 中，通过哪个 section + keyword 可以直接指定线性系统 RHS 的条目？
+答：Body Force 里用 Varname Load Real
+
+在 ELMER 中，Exec Solver String 允许的取值有哪些？
+答：never, always, before all, before timestep, after timestep, before saving, after saving, after all。
+
+在 ELMER 中，测试通过会产生什么文件？文件内容是什么？
+答：生成 TEST.PASSED；全通过写 1（ASCII），有任何失败写 0
+
+在 ELMER 中，用于自动结构-结构耦合的关键字是什么？
+答案： Automated Structure-Structure Coupling = Logical True
+
+在 ELMER 中，坐标变换类型由哪个关键字控制？
+答案： Coordinate Transformation
+
+在 ELMER 中，用于在 equal split 时尽量保持 mesh grading 的开关关键字是什么？
+答案： Mesh Keep Grading
+
+在 ELMER 中，创建 on-the-fly 不连续边界的关键字是什么？
+答案： Discontinuous Boundary
+
+在 ELMER 中，用于启用自适应求解流程的关键字是什么？
+答案： Adaptive Mesh Refinement
+
+在 ELMER 中，自定义误差估计接口中定义的“单元内部残差”函数名是什么？
+答案： InsideResidual
+
+在 ELMER 中，示例代码中用于判断是否启用自适应细化的逻辑检查函数是什么？
+答案： ListGetLogical
+
+在 ELMER 中，帮助编译自定义 Fortran solver 的封装命令是什么？
+答案： elmerf90
+
+在 ELMER 中，用于获取 Solver section 参数列表（Solver 1, …）的函数名是什么？
+答案： GetSolverParams()
+
+在 ELMER 中，用户函数的标准接口函数头（声明行）是什么？
+答案： FUNCTION myfunction( model, n, var ) RESULT(result)
+
+在 ELMER 中，用于获取问题维度的函数名是什么？
+答案： CoordinateSystemDimension()
+
+在 ELMER 中，示例 MyHeatSolver 中用于判断是否首次进入子程序并完成分配的布尔变量名是什么？
+答案： AllocationsDone
+
+在 ELMER 中，引入理想化辐射边界条件后，热方程是否仍为线性问题？
+答案： 否，热方程变为非线性。
+
+在 ELMER 中，Gebhart 因子方法与 radiosity 模型相比，主要的计算代价差异是什么？
+答案： Gebhart 因子方法计算代价更高。
+
+在 ELMER 中，Navier-Stokes 求解器 Variable 的默认名称是什么？
+答案： Flow Solution
+
+在 ELMER 中，Flow Model 关键字支持哪些取值？
+答案： Full、No convection、Stokes
+
+在 ELMER 中，“先做若干次 Picard 再切 Newton”的控制关键字是什么？
+答案： Nonlinear System Newton After Iterations
+
+在 ELMER 中，Nonlinear System Relaxation Factor 的默认值是什么？
+答案： 1
+
+在 ELMER 中，热方程的 Convection 关键字支持哪些取值？
+答案： None、Computed、Constant
+
+在 ELMER 中，材料段用于设置可压缩性模型的关键字是什么？
+答案： Compressibility Model
+
+在 ELMER 中，当 Newmark Beta = 0.0 时，对应的时间积分方法是什么？
+答案： Explicit Euler
+
+在 ELMER 中，BDF Order 的取值范围是多少？
+答案： 1 到 5。
+
+在 ELMER 中，这个方程求解器在 Solver section 里应该用哪个 Procedure 声明？
+答案： Procedure File "AdvectionDiffusion" "AdvectionDiffusionSolver"。
+
+在 ELMER 中，想标记“最大溶解度在该边界发生变化”用哪个边界关键字？
+答案： Varname Solubility Change Boundary Logical True。
+
+在 ELMER 中，Coordinate System 可以填哪些选项？
+答案： Cartesian 1D/2D/3D, Polar 2D/3D, Cylindric, Cylindric Symmetric, Axis Symmetric
+
+在 ELMER 中，Reynolds 模型包含哪两个求解器子程序？
+答案： ReynoldsSolver 和 ReynoldsHeatingSolver
+
+在 ELMER 中，ReynoldsSolver 支持求解的流体类型包括哪些？
+答案： 不可压缩液体、弱可压缩液体、等温理想气体、绝热理想气体
+
+在 ELMER 中，ReynoldsSolver 中压力变量的自由度数量由哪个关键字指定？
+答案： Variable DOFs
+
+在 ELMER 中，用于指定薄膜间隙高度的材料参数关键字是什么？
+答案： Gap Height
+
+在 ELMER 中，计算应变张量由哪个关键字控制？
+答案： Calculate Strains
+
+在 ELMER 中，将模型缩并结果保存到外部文件时，给出文件名的关键字是什么？
+答案： Model Lumping Filename
+
+在 ELMER 中，想启用非线性平面应力（plane stress）分析，需要怎么设置？
+答案： 将 Plane Stress 设为 True（并且坐标系选 Cartesian 2D）
+
+在 ELMER 中，若要用泊松比来指定材料参数，需要设置哪个关键字？
+答案： Poisson Ratio
+
+在 ELMER 中，若要使用 UMAT 用户材料模型，应如何指定 UMAT 文件与子程序名？
+答案： 使用关键字 UMAT Subroutine File，其值由两个字符串组成：编译文件名 + 子程序名
+
+在 ELMER 中，想把本构从默认模型切换到 neo-Hookean 材料模型，应该怎么设置？
+答案： 将 Neo-Hookean Material 设为 True
+
+在 ELMER 中，想处理不可压或近不可压 neo-Hookean 材料，应如何设置？
+答案： 将 Mixed Formulation 设为 True
+
+在 ELMER 中，如何让 Navier–Stokes 流场解来决定结构表面力？
+答案： 将关键字 FSI BC 设为 True
+
+在 ELMER 的壳有限元实现中，为什么低阶单元容易出现数值锁定问题？
+答案：因为在薄壳或弯曲主导情况下，低阶近似无法正确表示应变状态。
+
+在 ELMER 中，当板厚度相对于几何尺寸很小时，Reissner–Mindlin 模型可近似为何种模型？
+答案： Kirchhoff 板模型。
+
+在 ELMER 中，Beam solver 的平衡方程是用哪些物理量来描述的？
+答案：用截面上的应力合力和弯矩来描述。
+
+在 ELMER 中，Beam solver 采用的是哪一种剪切变形理论？
+答案：Timoshenko 梁理论。
+
+在 ELMER 中，Beam solver 中用于近似描述扭转效应的参数是什么？
+答案：Torsional Constant。
+
+在 ELMER 中，Beam solver 的求解程序名和子程序名是什么？
+答案：BeamSolver3D 和 TimoshenkoSolver。
+
+在 ELMER 中，如何在 Beam solver 中施加一个集中力或集中力矩？
+答案：使用 U i Load 施加力，使用 Theta i Load 施加力矩。
+
+在 ELMER 中，如何在结构模型里添加“按节点指定”的弹簧和质量？
+答案： 使用该 utility，在 solver input file 里通过节点索引（mesh node indices）指定弹簧/质量的位置。
+
+在 ELMER 中，如何把“装配弹簧”的 solver X 绑定到主 solver？
+答案： 在主 solver 的 section 中写 Assembly Solvers(1) = X。
+
+在 ELMER 中，Helmholtz 模型的 module name 和 subroutine 名分别是什么？
+答案： module name 是 HelmholtzSolve；module subroutine 是 HelmholtzSolver。
+
+在 ELMER 中，Helmholtz 求解器的 Variable DOFs 应该怎么设置？
+答案： 必须设置为 2。
+
+在 ELMER 中，如何用一个 sif 文件算多个频率点？
+答案：把 Simulation Type 设为 Scanning
+
+在 ELMER 中，如果用一个 sif 扫多个频率，怎么让上一个频率的解作为下一个频率迭代的初值？
+答案：把 Utilize Previous Solution 设为 True
+
+在 ELMER 中，ElmerSolver 是什么？
+答案：Elmer 的求解器主程序，是核心组件，提供有限元库工具并按需链接具体方程求解器库。
+
+在 ELMER 中，ElmerSolver 的命令文件是什么文件类型？
+答案：以 .sif 结尾的文件。
+
+在 ELMER 中，ElmerSolver 通过什么方式获取要读取的 command file 名称？
+答案：可以通过 ELMERSOLVER_STARTINFO 文件提供文件名，或者通过命令行参数传入。
+
+在 ELMER 中，ElmerGrid 是用来做什么的？
+答案： 它是一个网格生成与网格处理工具，可生成简单结构网格，也可读取其他网格并进行缩放、改元素类型、定义边界、并行划分等操作。
+
+在 ELMER 中，命令文件模式下怎么启动 ElmerGrid？
+答案： 以命令文件作为唯一参数，例如：ElmerGrid commandfile.eg。
+
+在 ELMER 中，想控制保存网格时的小数位数，怎么做？
+答案： 使用 -decimals 指定小数位数。
+
+在 ELMER 中，想把由矩形构成的 2D 网格自动切成三角形，怎么做？
+答案： 使用 -triangles
+
+在 ELMER 中，ElmerGrid 的原生网格文件格式是什么？
+答案： 使用 ElmerGrid format，文件后缀是 .grid。
+
+在 ELMER 中，怎么定义主方向上的子单元数量？
+答案： 用 Subcell Divisions，并按维度给 1/2/3 个方向的数量。

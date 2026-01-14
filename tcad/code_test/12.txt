@@ -1,0 +1,1 @@
+在三维SDE场景（up-direction=+z）中，使用定义Silicon 'sub'、PolySilicon 'poly'和Gas 'rearReflector'的立方体端点，构建节点网格n@node@，最后导出BND/TDR用于SDevice。

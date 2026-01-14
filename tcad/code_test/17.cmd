@@ -1,0 +1,5 @@
+(sdegeo:create-rectangle (position 0 0 0) (position 2 2 0) "Silicon" "Substrate")
+(sdegeo:create-rectangle (position -2 0 0) (position 0 2 0) "Vacuum" "tmp")
+(sdegeo:delete-region (find-region-id "tmp"))
+(sde:build-mesh "n@node@")
+(sdeio:save-tdr-bnd (get-body-list) "n@node@_bnd.tdr")
